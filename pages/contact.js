@@ -11,7 +11,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
 
-const contact = () => {
+const Contact = () => {
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
   return (
     <div
@@ -122,4 +122,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

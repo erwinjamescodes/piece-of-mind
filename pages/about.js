@@ -3,7 +3,7 @@ import React from "react";
 import { useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
 
-const about = () => {
+const About = () => {
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
 
   return (
@@ -66,4 +66,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
