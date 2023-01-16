@@ -106,7 +106,11 @@ function Navbar() {
                   className="mt-[24px]"
                 />
               </a>
-              <a href="https://github.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/erwinjamescodes/scream-your-heart-out"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icon
                   as={FaGithubSquare}
                   boxSize="8"

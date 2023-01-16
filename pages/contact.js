@@ -46,7 +46,11 @@ const contact = () => {
                 <Icon as={BsLinkedin} boxSize="7" cursor="pointer" />
               </a>
 
-              <a href="https://github.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/erwinjamescodes/scream-your-heart-out"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icon as={FaGithubSquare} boxSize="8" cursor="pointer" />
               </a>
             </Stack>
