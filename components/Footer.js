@@ -19,7 +19,16 @@ const Footer = () => {
           <Text fontSize={{ base: "sm", md: "lg" }} width="full">
             © 2023 Copyright | All Rights Reserved
           </Text>
-          <Text fontSize={{ base: "xs", md: "md" }}>Made by EGCaluag</Text>
+          <Text fontSize={{ base: "xs", md: "md" }}>
+            Made by{" "}
+            <a
+              href="https://www.linkedin.com/in/erwinjamescaluag/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>EGCaluag</span>
+            </a>
+          </Text>
         </Stack>
       </div>
     </div>

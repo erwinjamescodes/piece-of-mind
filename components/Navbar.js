@@ -52,7 +52,9 @@ function Navbar() {
 
         <div
           onClick={handleToggle}
-          className={`md:hidden z-50 ${nav ? "fixed right-6 top-9" : ""}`}
+          className={`md:hidden z-50 cursor-pointer ${
+            nav ? "fixed right-4 top-9" : ""
+          }`}
         >
           {!nav ? (
             <Icon as={AiOutlineMenu} boxSize="5" />

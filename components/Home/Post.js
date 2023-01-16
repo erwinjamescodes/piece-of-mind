@@ -1,4 +1,15 @@
-import { Card, Heading, Stack, Text, Badge } from "@chakra-ui/react";
+import {
+  Card,
+  Heading,
+  Stack,
+  Text,
+  Badge,
+  Button,
+  Collapse,
+} from "@chakra-ui/react";
+import _ from "lodash";
+import { useState } from "react";
+import formatDate from "../utilities/FormatDate";
 
 const Post = ({ post }) => {
   const categoryColorScheme = (cat) => {
@@ -31,7 +42,12 @@ const Post = ({ post }) => {
   };
   const formattedDate = date.toLocaleString("en-US", options);
 
-  // console.log(typeof post.body);
+  const toUpperCase = (name) => {
+    const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+    return capitalized;
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Card className="max-w-[1100px] w-[100%]" p={{ base: 6, md: 8 }}>
@@ -39,8 +55,11 @@ const Post = ({ post }) => {
         <Heading size={{ base: "sm", md: "md" }} textTransform="uppercase">
           {post.post_title}
         </Heading>
+
         <Heading size="xs" fontWeight={"medium"}>
-          Posted by <strong>{post.name}</strong> on {formattedDate}
+          <strong>{toUpperCase(post.name)}</strong> posted{" "}
+          {/* {formattedDate} */}
+          {formatDate(post.postedAt)}
         </Heading>
       </Stack>
       {post.body.map((item, index) => {
@@ -56,6 +75,7 @@ const Post = ({ post }) => {
           </Text>
         );
       })}
+
       <Stack direction="row" marginTop={6}>
         {post?.category?.map((cat, index) => {
           return (

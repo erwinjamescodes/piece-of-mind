@@ -137,9 +137,9 @@ const PostForm = () => {
   return (
     <Container
       maxW={"100%"}
-      className="flex justify-center"
+      className="flex justify-center min-h-[calc(100vh-240px)]"
       marginTop={isLessThan600 ? "30px" : "60px"}
-      marginBottom={8}
+      marginBottom={isLessThan600 ? 8 : null}
     >
       <Flex
         alignItems="start"
@@ -159,7 +159,7 @@ const PostForm = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Text>Write Post</Text>
+            <Text>Let it all out here...</Text>
             <Stack direction="row" spacing={2}>
               <Tooltip label="Reset Form" fontSize="xs">
                 <span
@@ -226,7 +226,7 @@ const PostForm = () => {
               className={`border p-4 rounded-md focus:outline-none h-[250px] ${
                 isLessThan600 ? "text-sm" : ""
               }`}
-              placeholder="Let it all out here..."
+              placeholder="Tell us how you feel..."
               required
               onChange={(e) => {
                 setUserPost((prev) => ({

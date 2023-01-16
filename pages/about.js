@@ -20,7 +20,7 @@ const About = () => {
           pb={"12px"}
           className="border-b-2 mb-4"
         >
-          <Text>Let it all out...</Text>
+          <Text>We feel you!</Text>
         </Heading>
         <Stack fontSize={isLessThan600 ? "" : "xl"} spacing={6}>
           <Text>
