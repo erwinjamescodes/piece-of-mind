@@ -61,8 +61,8 @@ const Contact = () => {
           <Text fontSize={isLessThan600 ? "" : "xl"}>
             We value your feedback to help us provide the best possible
             experience for our users. If you have any suggestions or
-            recommendations on how we can improve, please don't hesitate to
-            reach out. We're always open to hearing your thoughts and working
+            recommendations on how we can improve, please do not hesitate to
+            reach out. We are always open to hearing your thoughts and working
             together to make the online world a safer and more enjoyable place
             for everyone.
           </Text>

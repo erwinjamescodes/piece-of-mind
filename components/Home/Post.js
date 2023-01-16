@@ -43,9 +43,10 @@ const Post = ({ post }) => {
           Posted by <strong>{post.name}</strong> on {formattedDate}
         </Heading>
       </Stack>
-      {post.body.map((item) => {
+      {post.body.map((item, index) => {
         return (
           <Text
+            key={index}
             pt="4"
             fontSize={{ base: "sm", md: "md" }}
             className="w-[100%] "

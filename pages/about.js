@@ -34,7 +34,7 @@ const About = () => {
             ScreamYourHeartOut.online is a safe and anonymous online platform
             for those looking to release their emotions and relieve stress. The
             website allows users to express themselves freely by anonymously
-            posting their thoughts and feelings. Whether you're going through a
+            posting their thoughts and feelings. Whether you are going through a
             difficult time or just need to let out a scream, this is the perfect
             outlet to let it all out and feel heard. With
             ScreamYourHeartOut.online, you can scream your heart out without
