@@ -245,7 +245,7 @@ const PostForm = () => {
             {remainingCharacters}/1500
           </p>
 
-          <Stack direction="row" mt={4} overflowX="auto" id="button-stack">
+          <Stack direction="row" mt={4} overflowX="auto" className="button-stack">
             {categories.map((category, index) => {
               return (
                 <Button

@@ -76,13 +76,18 @@ const Post = ({ post }) => {
         );
       })}
 
-      <Stack direction="row" marginTop={6}>
+      <Stack
+        direction="row"
+        marginTop={6}
+        overflowX="auto"
+        className="button-stack"
+      >
         {post?.category?.map((cat, index) => {
           return (
             <Badge
               key={index}
               colorScheme={categoryColorScheme(cat)}
-              px={2}
+              px={3}
               py={1}
               rounded={"full"}
             >

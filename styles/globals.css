@@ -13,15 +13,13 @@ body {
   overflow-x: hidden;
 }
 
-#button-stack::-webkit-scrollbar {
+.button-stack::-webkit-scrollbar {
 display: none;
 }
 
-#button-stack {
+.button-stack {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
-.children-container {
-  flex-grow: 1;
-}
+
