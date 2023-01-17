@@ -9,7 +9,6 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
-  useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useMediaQuery } from "@chakra-ui/react";
@@ -18,7 +17,7 @@ export default function HeroSection() {
   const [isLessThan600] = useMediaQuery("(max-width: 400px)");
   return (
     <>
-      <Container maxW={"3xl"} className="max-w-[1100px] mt-[100px]">
+      <Container maxW={"3xl"} className="max-w-[1100px]">
         <Stack
           as={Box}
           textAlign={"center"}
@@ -29,7 +28,6 @@ export default function HeroSection() {
             fontWeight={600}
             fontSize={{ base: "4xl", sm: "4xl", md: "6xl" }}
           >
-            {/* <Text>Scream your heart out!</Text> */}
             {!isLessThan600 ? (
               <Text>Scream your heart out!</Text>
             ) : (

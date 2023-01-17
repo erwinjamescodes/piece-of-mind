@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 import Footer from "../components/Footer";
+import theme from "../theme";
 
 export default function App({ Component, pageProps }) {
   const Layout = Component.layout || (({ children }) => <>{children}</>);
@@ -15,12 +16,10 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ChakraProvider>
-        {/* <div className="flex flex-col min-h-[100vh] bg-[gray]"> */}
-          <Navbar />
-          <Component {...pageProps}  />
-          <Footer />
-        {/* </div> */}
+      <ChakraProvider theme={theme}>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
       </ChakraProvider>
     </Layout>
   );

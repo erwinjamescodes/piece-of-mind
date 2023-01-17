@@ -8,18 +8,18 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
 import Logo from "../Assets/logo.png";
 import Image from "next/image";
+import { useColorMode } from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { IconButton } from "@chakra-ui/button";
 
 function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
   const [nav, setNav] = useState(false);
   const handleToggle = () => setNav((prev) => !prev);
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
+
   return (
-    <Container
-      maxW={"100%"}
-      className="h-[100px] flex justify-center fixed top-0"
-      bgColor={"white"}
-      zIndex={10}
-    >
+    <Container maxW={"100%"} className="h-[100px] flex justify-center">
       <Flex
         alignItems="center"
         justifyContent="space-between"
@@ -28,7 +28,7 @@ function Navbar() {
         } `}
       >
         <Link href="/">
-          <div className={`flex items-center gap-[12px] `}>
+          <div className={`flex items-center gap-[12px]  `}>
             <div>
               <Image src={Logo} alt="Hero Image" height={40}></Image>
             </div>
@@ -39,6 +39,15 @@ function Navbar() {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
+            <IconButton
+              mt={4}
+              aria-label="Toggle Mode"
+              onClick={toggleColorMode}
+              bgColor="transparent"
+              _hover={{ bgColor: "transparent" }}
+            >
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
             <Link href="/create-post">
               <Button
                 color={"white"}
@@ -55,30 +64,46 @@ function Navbar() {
           </Stack>
         </div>
 
-        <div
-          onClick={handleToggle}
-          className={`md:hidden z-50 cursor-pointer ${
-            nav ? "fixed right-4 top-9" : ""
-          }`}
-        >
-          {!nav ? (
-            <Icon as={AiOutlineMenu} boxSize="5" />
-          ) : (
-            <Icon as={AiOutlineClose} boxSize="5" />
-          )}
+        <div className="md:hidden flex gap-3">
+          <IconButton
+            aria-label="Toggle Mode"
+            onClick={toggleColorMode}
+            bgColor="transparent"
+            _hover={{ bgColor: "transparent" }}
+            size={12}
+            zIndex={50}
+          >
+            {colorMode === "light" ? (
+              <MoonIcon fontSize={20} />
+            ) : (
+              <SunIcon fontSize={20} />
+            )}
+          </IconButton>
+          <div
+            onClick={handleToggle}
+            className={`md:hidden z-50 cursor-pointer `}
+          >
+            {!nav ? (
+              <Icon as={AiOutlineMenu} boxSize="6" />
+            ) : (
+              <Icon as={AiOutlineClose} boxSize="6" />
+            )}
+          </div>
         </div>
+
         <div
-          className={
+          className={`${
             !nav
               ? "hidden"
-              : "fixed top-0 left-0 w-full h-screen bg-[white] flex flex-col justify-start items-center text-center md:hidden z-40 "
-          }
+              : "fixed top-0 left-0 w-full h-screen flex flex-col justify-start items-center text-center md:hidden z-40 "
+          } 
+              ${colorMode === "light" ? "bg-[white]" : "bg-[#1a202c]"}`}
         >
           <Stack
             spacing={8}
             alignItems={"center"}
             justifyContent={"center"}
-            mt="180px"
+            mt="150px"
             fontSize={"2xl"}
           >
             <Link href="/">Home</Link>

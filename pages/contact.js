@@ -15,8 +15,8 @@ const Contact = () => {
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
   return (
     <div
-      className={`max-w-[1100px] min-h-[calc(100vh-240px)] w-[100%] flex flex-col items-center mx-auto mb-[30px] ${
-        isLessThan600 ? "mt-[130px] " : "mt-[140px]"
+      className={`max-w-[1100px] min-h-[calc(100vh-240px)] w-[100%] flex flex-col items-center mx-auto ${
+        isLessThan600 ? "mt-[30px] mb-[30px]  " : "mt-[60px]"
       }`}
     >
       <Stack width="full" spacing={{ base: 2 }} px={isLessThan600 ? 4 : 8}>

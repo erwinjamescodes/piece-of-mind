@@ -1,10 +1,11 @@
-import { Stack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Button, Stack } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 import HeroSection from "../components/Home/Hero";
 import Post from "../components/Home/Post";
 import SkeletonPost from "../components/Home/SkeletonPost";
 import NoResults from "../components/Home/NoResults";
 import FilterPosts from "../components/Home/FilterPosts";
+import { useMediaQuery } from "@chakra-ui/react";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -13,6 +14,11 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredCategory, setFilteredCategory] =
     useState("Filter by Category");
+
+  //Pagination tools
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerpage] = useState(8);
+  const [isLessThan600] = useMediaQuery("(max-width: 600px)");
 
   useEffect(() => {
     (async () => {
@@ -37,14 +43,58 @@ export default function Home() {
     })();
   }, [searchTerm]);
 
-  const renderPosts = (posts, filteredCategory) => {
-    const filteredPosts =
-      filteredCategory !== "Filter by Category"
-        ? posts.filter((post) => post.category.includes(filteredCategory))
-        : posts;
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
+  const paginationButtons = () => {
+    return (
+      <>
+        <Stack direction={"row"}>
+          <Button
+            size={"sm"}
+            className={`shadow-none   ${isLessThan600 < 600 ? "text-xs" : ""}`}
+            disabled={currentPage === 1}
+            onClick={() => {
+              executeScroll();
+              setCurrentPage(currentPage - 1);
+            }}
+            colorScheme={currentPage === 1 ? "gray" : "red"}
+          >
+            Previous
+          </Button>
+          <Button
+            size={"sm"}
+            className={`shadow-none ${isLessThan600 ? "text-xs" : ""}`}
+            disabled={currentPage === totalPageCount}
+            onClick={() => {
+              executeScroll();
+              setCurrentPage(currentPage + 1);
+            }}
+            colorScheme={currentPage === totalPageCount ? "gray" : "red"}
+          >
+            Next
+          </Button>
+        </Stack>
+      </>
+    );
+  };
 
+  const indexOfLastProduct = currentPage * productsPerpage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerpage;
+  const filteredPosts =
+    filteredCategory !== "Filter by Category"
+      ? posts?.filter((post) => post.category.includes(filteredCategory))
+      : posts;
+  const totalPageCount = Math.ceil(filteredPosts?.length / productsPerpage);
+  const RenderPosts = () => {
     return filteredPosts.length !== 0 ? (
-      filteredPosts.map((post, index) => <Post post={post} key={index} />)
+      <>
+        {filteredPosts
+          ?.slice(indexOfFirstProduct, indexOfLastProduct)
+          .map((post, index) => (
+            <Post post={post} key={index} />
+          ))}
+        {paginationButtons()}
+      </>
     ) : (
       <NoResults />
     );
@@ -54,6 +104,7 @@ export default function Home() {
     <>
       <main className="flex flex-col justify-center items-center px-4 ">
         <HeroSection />
+        <div ref={myRef}></div>
         <FilterPosts
           setFilteredCategory={setFilteredCategory}
           setSearchTerm={setSearchTerm}
@@ -67,11 +118,7 @@ export default function Home() {
           width="full"
           className="mb-[60px]"
         >
-          {isLoading || isSearching ? (
-            <SkeletonPost />
-          ) : (
-            renderPosts(posts, filteredCategory)
-          )}
+          {isLoading || isSearching ? <SkeletonPost /> : <RenderPosts />}
         </Stack>
       </main>
     </>

@@ -55,11 +55,12 @@ const Post = ({ post }) => {
           px={{ base: 6 }}
           pt={6}
           pb={accordionOn ? 6 : 0}
-          _hover={{ bg: "white" }}
+          _hover={{ bg: "none" }}
           _focus={{ borderRadius: 5 }}
           onClick={() => {
             setAccordionOn(!accordionOn);
           }}
+          // animateOpacity
         >
           <Stack direction="row" width="full" justifyContent="space-between">
             <Stack

@@ -138,8 +138,8 @@ const PostForm = () => {
     <Container
       maxW={"100%"}
       className="flex justify-center min-h-[calc(100vh-240px)]"
-      marginTop={isLessThan600 ? "130px" : "140px"}
-      marginBottom={isLessThan600 ? 8 : 12}
+      marginTop={isLessThan600 ? "30px" : "60px"}
+      marginBottom={isLessThan600 ? 8 : null}
     >
       <Flex
         alignItems="start"
