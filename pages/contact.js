@@ -10,9 +10,11 @@ import {
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Contact = () => {
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
+
   return (
     <div
       className={`max-w-[1100px] min-h-[calc(100vh-240px)] w-[100%] flex flex-col items-center mx-auto ${

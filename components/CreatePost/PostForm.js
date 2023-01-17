@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Icon } from "@chakra-ui/react";
-import { GrPowerReset } from "react-icons/gr";
+import { MdOutlineRefresh } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import { useMediaQuery } from "@chakra-ui/react";
 
@@ -159,7 +159,7 @@ const PostForm = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Text>Let it all out here...</Text>
+            <Text>Let it all out...</Text>
             <Stack direction="row" spacing={2}>
               <Tooltip label="Reset Form" fontSize="xs">
                 <span
@@ -167,7 +167,7 @@ const PostForm = () => {
                     resetForm();
                   }}
                 >
-                  <Icon as={GrPowerReset} boxSize="5" cursor="pointer" />
+                  <Icon as={MdOutlineRefresh} boxSize="6" cursor="pointer" />
                 </span>
               </Tooltip>
               <Tooltip label="Delete Draft" fontSize="xs">
@@ -304,7 +304,8 @@ const PostForm = () => {
             Save Draft
           </Button>
           <Button
-            colorScheme="red"
+            // colorScheme="red"
+            bg={"red.600"}
             rounded={"full"}
             px={10}
             fontSize={{ base: "xs", sm: "md" }}
