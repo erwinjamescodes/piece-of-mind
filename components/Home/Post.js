@@ -46,7 +46,7 @@ const Post = ({ post }) => {
       defaultIndex={[0]}
       allowMultiple
       as={Card}
-      className="max-w-[1100px] w-[100%]"
+      className="max-w-[1100px] w-[100%] focus:outline-none focus:border-none"
       borderRadius={5}
       textAlign={"left"}
     >
@@ -56,6 +56,7 @@ const Post = ({ post }) => {
           pt={6}
           pb={accordionOn ? 6 : 0}
           _hover={{ bg: "white" }}
+          _focus={{ borderRadius: 5 }}
           onClick={() => {
             setAccordionOn(!accordionOn);
           }}

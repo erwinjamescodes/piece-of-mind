@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col justify-center items-center px-4">
+      <main className="flex flex-col justify-center items-center px-4 ">
         <HeroSection />
         <FilterPosts
           setFilteredCategory={setFilteredCategory}

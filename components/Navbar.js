@@ -14,7 +14,12 @@ function Navbar() {
   const handleToggle = () => setNav((prev) => !prev);
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
   return (
-    <Container maxW={"100%"} className="h-[100px] flex justify-center">
+    <Container
+      maxW={"100%"}
+      className="h-[100px] flex justify-center fixed top-0"
+      bgColor={"white"}
+      zIndex={10}
+    >
       <Flex
         alignItems="center"
         justifyContent="space-between"

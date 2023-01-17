@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <div
       className={`max-w-[1100px] min-h-[calc(100vh-240px)] w-[100%] flex flex-col items-center mx-auto  ${
-        isLessThan600 ? "mt-[30px] mb-[30px]" : "mt-[60px]"
+        isLessThan600 ? "mt-[130px] mb-[30px]" : "mt-[160px]"
       }`}
     >
       <Stack width="full" spacing={{ base: 2 }} px={isLessThan600 ? 4 : 8}>

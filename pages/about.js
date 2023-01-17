@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div
       className={`max-w-[1100px] w-[100%] flex flex-col mx-auto min-h-[calc(100vh-240px)]   ${
-        isLessThan600 ? "mt-[30px] mb-[60px]" : "mt-[60px]"
+        isLessThan600 ? "mt-[130px] mb-[60px]" : "mt-[160px]"
       }`}
     >
       <Stack width="full" spacing={{ base: 2 }} px={isLessThan600 ? 4 : 8}>

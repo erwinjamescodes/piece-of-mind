@@ -18,7 +18,7 @@ export default function HeroSection() {
   const [isLessThan600] = useMediaQuery("(max-width: 400px)");
   return (
     <>
-      <Container maxW={"3xl"} className="max-w-[1100px] ">
+      <Container maxW={"3xl"} className="max-w-[1100px] mt-[100px]">
         <Stack
           as={Box}
           textAlign={"center"}

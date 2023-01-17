@@ -114,7 +114,7 @@ const FilterPosts = ({
           </Menu>
           <Icon
             as={AiOutlineClose}
-            boxSize="3"
+            boxSize="4"
             ml={2}
             mr={-1}
             mb={1}

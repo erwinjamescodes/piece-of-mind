@@ -138,7 +138,7 @@ const PostForm = () => {
     <Container
       maxW={"100%"}
       className="flex justify-center min-h-[calc(100vh-240px)]"
-      marginTop={isLessThan600 ? "30px" : "60px"}
+      marginTop={isLessThan600 ? "130px" : "160px"}
       marginBottom={isLessThan600 ? 8 : null}
     >
       <Flex
@@ -245,7 +245,12 @@ const PostForm = () => {
             {remainingCharacters}/1500
           </p>
 
-          <Stack direction="row" mt={4} overflowX="auto" className="button-stack">
+          <Stack
+            direction="row"
+            mt={4}
+            overflowX="auto"
+            className="button-stack"
+          >
             {categories.map((category, index) => {
               return (
                 <Button
