@@ -16,7 +16,9 @@ import { MdOutlineRefresh } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import { useMediaQuery } from "@chakra-ui/react";
 
+
 const PostForm = () => {
+
   const [userPost, setUserPost] = useState({
     name: "",
     title: "",
@@ -308,6 +310,7 @@ const PostForm = () => {
             bg={"red.600"}
             rounded={"full"}
             px={10}
+            color={"white"}
             fontSize={{ base: "xs", sm: "md" }}
             disabled={
               userPost.title === "" ||
