@@ -30,7 +30,7 @@ function Navbar() {
         <Link href="/">
           <div className={`flex items-center gap-[12px]  `}>
             <div>
-              <Image src={Logo} alt="Hero Image" height={40}></Image>
+              <Image src={Logo} alt="Scream Your Heart Out" height={40}></Image>
             </div>
           </div>
         </Link>
