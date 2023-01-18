@@ -1,14 +1,4 @@
-import {
-  Card,
-  Heading,
-  Stack,
-  Text,
-  Badge,
-  Button,
-  Collapse,
-  Box,
-} from "@chakra-ui/react";
-import _ from "lodash";
+import { Card, Heading, Stack, Text, Badge } from "@chakra-ui/react";
 import { useState } from "react";
 import formatDate from "../utilities/FormatDate";
 import {
@@ -41,6 +31,7 @@ const Post = ({ post }) => {
     }
   };
 
+
   return (
     <Accordion
       defaultIndex={[0]}
@@ -60,7 +51,6 @@ const Post = ({ post }) => {
           onClick={() => {
             setAccordionOn(!accordionOn);
           }}
-          // animateOpacity
         >
           <Stack direction="row" width="full" justifyContent="space-between">
             <Stack

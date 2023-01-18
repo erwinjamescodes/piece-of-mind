@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Heading,
-  Stack,
-  Text,
-  Tooltip,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Button, Heading, Stack, Text, Icon } from "@chakra-ui/react";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
@@ -14,6 +6,11 @@ import { useState } from "react";
 
 const Contact = () => {
   const [isLessThan600] = useMediaQuery("(max-width: 600px)");
+  const [formInput, setFormInput] = useState({
+    name: "",
+    email: "",
+    messageBody: "",
+  });
 
   return (
     <div
@@ -82,6 +79,12 @@ const Contact = () => {
                 placeholder="Name"
                 name="name"
                 required
+                onChange={(e) => {
+                  setFormInput((prev) => ({
+                    ...prev,
+                    name: e.target.value,
+                  }));
+                }}
               />
               <input
                 type="email"
@@ -91,6 +94,12 @@ const Contact = () => {
                 placeholder="Email"
                 name="email"
                 required
+                onChange={(e) => {
+                  setFormInput((prev) => ({
+                    ...prev,
+                    email: e.target.value,
+                  }));
+                }}
               />
               <textarea
                 className={`border p-4 rounded-md focus:outline-none  ${
@@ -100,6 +109,12 @@ const Contact = () => {
                 rows="6"
                 placeholder="Message"
                 required
+                onChange={(e) => {
+                  setFormInput((prev) => ({
+                    ...prev,
+                    messageBody: e.target.value,
+                  }));
+                }}
               ></textarea>
             </Stack>
             <Box alignSelf={"start"}>
@@ -113,6 +128,11 @@ const Contact = () => {
                 _hover={{
                   bg: "red.500",
                 }}
+                disabled={
+                  formInput.name === "" ||
+                  formInput.email === "" ||
+                  formInput.messageBody === ""
+                }
               >
                 Send Message
               </Button>
