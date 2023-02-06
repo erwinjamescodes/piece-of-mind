@@ -1,6 +1,6 @@
 import { Card, Heading, Stack, Text, Badge } from "@chakra-ui/react";
 import { useState } from "react";
-import formatDate from "../utilities/FormatDate";
+import * as timeago from "timeago.js";
 import {
   Accordion,
   AccordionItem,
@@ -30,7 +30,6 @@ const Post = ({ post }) => {
         return "gray";
     }
   };
-
 
   return (
     <Accordion
@@ -62,7 +61,7 @@ const Post = ({ post }) => {
                 {toUpperCase(post.post_title)}
               </Heading>
               <Text fontSize="xs" fontWeight={"medium"} textAlign="left">
-                {toUpperCase(post.name)} posted {formatDate(post.postedAt)}
+                {toUpperCase(post.name)} posted {timeago.format(post.postedAt)}
               </Text>
             </Stack>
             <AccordionIcon color={"gray.300"} />
