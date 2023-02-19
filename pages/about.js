@@ -24,21 +24,20 @@ const About = () => {
         </Heading>
         <Stack fontSize={isLessThan600 ? "" : "xl"} spacing={6}>
           <Text>
-            Screaming out your emotions can be a powerful way to relieve
+            Screaming out your feelings can be a powerful way to relieve
             negative emotions. While this action might feel great to you, this
             may impose negative effects on the people surrounding you. So
             instead of screaming your heart out and causing harm to others,
-            scream your heart out online!
+            unload a piece of your mind online!
           </Text>
           <Text>
-            ScreamYourHeartOut.online is a safe and anonymous online platform
-            for those looking to release their emotions and relieve stress. The
-            website allows users to express themselves freely by anonymously
-            posting their thoughts and feelings. Whether you are going through a
+            Piece of Mind is a safe and anonymous online platform for those
+            looking to release their emotions and relieve stress. The website
+            allows users to express themselves freely by anonymously posting
+            their thoughts and feelings. Whether you are going through a
             difficult time or just need to let out a scream, this is the perfect
-            outlet to let it all out and feel heard. With
-            ScreamYourHeartOut.online, you can scream your heart out without
-            judgment and without repercussions.
+            outlet to let it all out and feel heard. With Piece of Mind, you can
+            unload a piece of your mind and find peace of mind!
           </Text>
           <Text>
             Take note, however, that this website is not a substitute for
