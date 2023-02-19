@@ -102,7 +102,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col justify-center items-center px-4 ">
+      <main className="flex flex-col justify-center items-center px-4 max-w-[1100px] w-full mx-auto">
         <HeroSection />
         <div ref={myRef}></div>
         <FilterPosts

@@ -9,6 +9,7 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Flex,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useMediaQuery } from "@chakra-ui/react";
@@ -17,32 +18,26 @@ export default function HeroSection() {
   const [isLessThan600] = useMediaQuery("(max-width: 400px)");
   return (
     <>
-      <Container maxW={"3xl"} className="max-w-[1100px]">
+      <Flex className="w-full ">
         <Stack
-          as={Box}
           textAlign={"center"}
-          spacing={{ base: 4, md: 6 }}
+          spacing={{ base: 4, md: 10 }}
           py={{ base: 20, md: 36 }}
+          justifyContent={"center"}
+          alignItems={"center"}
         >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "4xl", sm: "4xl", md: "6xl" }}
-          >
-            {!isLessThan600 ? (
-              <Text>Scream your heart out!</Text>
-            ) : (
-              <>
-                <Text>Scream your</Text>
-                <Text>heart out!</Text>
-              </>
-            )}
-          </Heading>
           <Text
-            color={"gray.500"}
-            fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
+            fontSize={{ base: "4xl", sm: "4xl", md: "5xl" }}
+            className="font-semibold w-[80%] mx-auto"
           >
             Anonymously post your thoughts and feelings without judgement and
-            without repercussions.
+            repercussions.
+          </Text>
+          <Text
+            fontSize={{ base: "xl", md: "2xl" }}
+            className="w-[80%] mx-auto"
+          >
+            Unload a piece of your mind here to find your peace of mind.
           </Text>
           <Stack
             direction={"column"}
@@ -87,7 +82,7 @@ export default function HeroSection() {
             </Box>
           </Stack>
         </Stack>
-      </Container>
+      </Flex>
     </>
   );
 }
