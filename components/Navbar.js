@@ -28,7 +28,7 @@ function Navbar() {
         } `}
       >
         <Link href="/">
-          <div className={`flex items-center gap-[12px]  `}>
+          <div className={`flex items-center gap-[12px]`}>
             <div>
               <Image src={Logo} alt="Scream Your Heart Out" height={40}></Image>
             </div>
